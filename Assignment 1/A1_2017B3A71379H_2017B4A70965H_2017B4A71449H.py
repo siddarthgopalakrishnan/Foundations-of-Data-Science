@@ -52,6 +52,11 @@ prior_value = 0
 posterior_value = 0
 
 for i in range(N):
+	# Save image for each iteration
+    y = ([generate_distribution(i * 0.00001, alpha, beta) for i in range(1,100000)])
+    ax1.plot(x, y)
+    #plt.savefig(str(i+1) + ".png")
+    
     if i > 0:
         prior_value = posterior_value
     if data[i] == 1:
@@ -59,13 +64,8 @@ for i in range(N):
     else:
         beta += 1
     posterior_value = generate_distribution(mean, alpha, beta)
-    #print("Prior value = " + str(prior_value))
-    #print("Posterior value = " + str(posterior_value))
-    
-    # Save image for each iteration
-    y = ([generate_distribution(i * 0.00001, alpha, beta) for i in range(1,100000)])
-    ax1.plot(x, y)
-    #plt.savefig(str(i+1) + ".png")
+    print("Prior value = " + str(prior_value))
+    print("Posterior value = " + str(posterior_value))
 
 #plt.show()
 #print("Mean, Alpha and Beta are =", mean, alpha, beta)
@@ -77,7 +77,7 @@ beta = 3
 alpha += m
 beta += N-m
 posterior_value = generate_distribution(mean, alpha, beta)
-#print("Mean, Alpha and Beta are =", mean, alpha, beta)
+print("Mean, Alpha and Beta are =", mean, alpha, beta)
 print("Posterior value by batch approach = " + str(posterior_value))
 Y = ([generate_distribution(i * 0.00001, alpha, beta) for i in range(1,100000)])
 ax2.plot(x, Y)
