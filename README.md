@@ -2,7 +2,7 @@
 
 ## Assignment 1
 - Compare the _sequential_ and _batch_ approach <br/> for calculating the posterior distribution <br/>
-![Final comparison]("./Assignment 1/Images + GIF/Entire batch.png")
+![Final comparison](https://github.com/siddarthgopalakrishnan/Foundations-of-Data-Science-Assg/blob/main/Assignment 1/Images %2B GIF/Entire batch.png?raw=true)
 
 ## Assignment 2
 - Implementing linear regression in 3 ways:
